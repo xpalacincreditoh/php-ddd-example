@@ -10,7 +10,9 @@ deps: composer-install
 composer-install: CMD=install
 composer-update: CMD=update
 composer composer-install composer-update:
-	@docker run --rm --interactive --volume $(current-dir):/app --user $(id -u):$(id -g) \
+	@docker run --rm --interactive --user $(id -u):$(id -g) \
+		--volume $(current-dir):/app \
+		--volume ${COMPOSER_HOME:-$HOME/.composer}:/tmp \
 		clevyr/prestissimo $(CMD) \
 			--ignore-platform-reqs \
 			--no-ansi \
