@@ -23,7 +23,7 @@ reload:
 	@docker-compose exec nginx nginx -s reload
 
 test:
-	@docker exec codelytv-php_ddd_skeleton-php make run-tests
+	@docker exec codelytv-php_ddd_example make run-tests
 
 run-tests:
 	mkdir -p build/test_results/phpunit

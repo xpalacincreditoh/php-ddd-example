@@ -2,7 +2,7 @@ version: '3'
 
 services:
   mysql:
-    container_name: codelytv-php_ddd_skeleton-mooc-mysql
+    container_name: codelytv-php_ddd_example-mooc-mysql
     image: mysql:8
     ports:
       - "3360:3306"
@@ -12,7 +12,7 @@ services:
     command: ["--default-authentication-plugin=mysql_native_password"]
 
   rabbitmq:
-    container_name: codelytv-php_ddd_skeleton-rabbitmq
+    container_name: codelytv-php_ddd_example-rabbitmq
     image: 'rabbitmq:3.7-management'
     restart: unless-stopped
     ports:
@@ -23,7 +23,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=c0d3ly
 
   nginx:
-    container_name: codelytv-ddd-skeleton-nginx
+    container_name: codelytv-php_ddd_example-nginx
     image: nginx:1.15-alpine
     restart: unless-stopped
     ports:
@@ -35,7 +35,7 @@ services:
       - php
 
   php:
-    container_name: codelytv-php_ddd_skeleton-php
+    container_name: codelytv-php_ddd_example
     build:
       context: .
       dockerfile: Dockerfile
