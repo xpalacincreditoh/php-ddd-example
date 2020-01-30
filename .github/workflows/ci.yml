@@ -31,4 +31,4 @@ jobs:
           done
 
       - name: Run the tests
-        run: make test
+        run: make parallel-test
