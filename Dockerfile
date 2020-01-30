@@ -2,7 +2,7 @@ FROM php:7.4.2-fpm-alpine
 WORKDIR /app
 
 RUN apk --update upgrade \
-    && apk add --no-cache autoconf automake make gcc g++ icu-dev rabbitmq-c rabbitmq-c-dev parallel \
+    && apk add --no-cache autoconf automake make gcc g++ icu-dev rabbitmq-c rabbitmq-c-dev \
     && pecl install amqp-1.9.4 \
     && pecl install apcu-5.1.18 \
     && pecl install xdebug-2.9.1 \
