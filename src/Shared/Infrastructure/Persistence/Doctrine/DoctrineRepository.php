@@ -27,7 +27,7 @@ abstract class DoctrineRepository
         $this->entityManager()->persist($entity);
         $this->entityManager()->flush($entity);
     }
-
+<
     protected function remove(AggregateRoot $entity): void
     {
         $this->entityManager()->remove($entity);
